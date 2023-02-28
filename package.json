@@ -1,0 +1,23 @@
+{
+  "name": "image-factory",
+  "version": "1.0.0",
+  "description": "浏览器中的图片处理器, 内置滤镜, 支持自定义滤镜.",
+  "keywords": ["image", "filter"],
+  "browser": "./src/index.ts",
+  "author": "feng <1984779164@qq.com> (https://easyremember.cn)",
+  "type": "module",
+  "homepage": "https://github.com/Fengjing95/image-factory#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fengjing95/image-factory"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
+    "rollup": "^3.17.3",
+    "tslib": "^2.5.0"
+  }
+}
