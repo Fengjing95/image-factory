@@ -1,6 +1,10 @@
 {
-  "name": "image-factory",
-  "version": "1.0.0",
+  "name": "@feng-j/image-factory",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "version": "1.0.1",
   "description": "浏览器中的图片处理器, 内置滤镜, 支持自定义滤镜.",
   "keywords": ["image", "filter"],
   "browser": "./src/index.ts",

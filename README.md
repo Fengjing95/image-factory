@@ -5,7 +5,7 @@
 ### 安装
 
 ```bash
-$ npm install image-factory
+$ npm install @feng-j/image-factory
 ```
 或者使用你习惯的其他包管理工具
 
@@ -20,7 +20,7 @@ $ npm install image-factory
 代码描述如下
 
 ```typescript
-import { ImageFactory, GrayscaleFilter } from 'image-factory'
+import { ImageFactory, GrayscaleFilter } from '@feng-j/image-factory'
 
 function handler(e: Event) {
   const file = (<HTMLInputElement>e.target).files[0];
