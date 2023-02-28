@@ -4,10 +4,14 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "version": "1.0.1",
+  "version": "1.1.2",
   "description": "浏览器中的图片处理器, 内置滤镜, 支持自定义滤镜.",
-  "keywords": ["image", "filter"],
-  "browser": "./src/index.ts",
+  "keywords": [
+    "image",
+    "filter"
+  ],
+  "browser": "dist/t/index.esm.js",
+  "types": "dist/index.d.ts",
   "author": "feng <1984779164@qq.com> (https://easyremember.cn)",
   "type": "module",
   "homepage": "https://github.com/Fengjing95/image-factory#readme",
@@ -22,6 +26,7 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.0.0",
     "rollup": "^3.17.3",
+    "rollup-plugin-dts": "^5.2.0",
     "tslib": "^2.5.0"
   }
 }
