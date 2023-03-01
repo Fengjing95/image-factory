@@ -42,8 +42,12 @@ window.onload = () => {
 
 ### 滤镜
 
-目前内置了两款滤镜, 后续会继续完善内置滤镜的种类
-+ GrayscaleFilter: 灰度滤镜
-+ InverseColorFilter: 反色滤镜
+目前内置了下列滤镜, 后续会继续完善内置滤镜的种类
++ GrayscaleFilter: 灰度滤镜;
++ InverseColorFilter: 反色滤镜;
++ BrightnessFilter: 亮度调节(大于 0 变亮, 小于 0 变暗), 范围-255 到 255(纯黑和纯白);
++ OldPhotoFilter: 老照片滤镜;
++ EmbossFilter: 浮雕滤镜;
 
-支持自定义滤镜处理方式, 需要自定义滤镜需要实现 IFilter 接口, 在给图片添加滤镜时会将 [ImageData](https://developer.mozilla.org/zh-CN/docs/Web/API/ImageData) 数据作为参数传给 exec 方法, 你可以直接操作这些 ImageData, 不需要返回任何结果, 即便返回也没有任何作用.
+
+支持自定义滤镜处理方式, 需要自定义滤镜需要实现 IFilter 接口, 在给图片添加滤镜时会将 [ImageData](https://developer.mozilla.org/zh-CN/docs/Web/API/ImageData) 数据作为参数传给 exec 方法, 你可以直接操作这个 ImageData 并返回, 也可以返回一个新的 ImageData 对象.

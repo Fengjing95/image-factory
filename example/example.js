@@ -3,10 +3,10 @@
  * @Author: 枫
  * @LastEditors: 枫
  * @description: description
- * @LastEditTime: 2023-02-28 15:12:36
+ * @LastEditTime: 2023-03-01 10:23:43
  */
 
-import { ImageFactory, GrayscaleFilter } from "../dist/esm/index.js";
+import { ImageFactory, GrayscaleFilter } from "../dist/index.esm.js";
 
 const image = new ImageFactory()
 function handler(e) {

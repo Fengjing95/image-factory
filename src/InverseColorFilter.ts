@@ -3,12 +3,12 @@
  * @Author: 枫
  * @LastEditors: 枫
  * @description: 反色滤镜
- * @LastEditTime: 2023-02-28 14:31:38
+ * @LastEditTime: 2023-03-01 10:22:22
  */
-import { Filter } from "./IFilter";
+import { IFilter } from "./IFilter";
 
-export class InverseColorFilter implements Filter {
-  exec(imageData: ImageData): void {
+export class InverseColorFilter implements IFilter {
+  exec(imageData: ImageData): ImageData {
     const data = imageData.data
 
     for (let i = 0; i < data.length; i += 4) {
@@ -21,5 +21,7 @@ export class InverseColorFilter implements Filter {
       data[i + 1] = green
       data[i + 2] = blue
     }
+    
+    return imageData
   }
 }

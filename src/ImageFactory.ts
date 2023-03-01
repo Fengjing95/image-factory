@@ -1,11 +1,11 @@
 /*
   * @Date: 2023-02-27 15:39:23
   * @Author: 枫
-  * @LastEditors: 枫
+ * @LastEditors: 枫
   * @description: 图片处理器
-  * @LastEditTime: 2023-02-28 09:52:11
+ * @LastEditTime: 2023-03-01 10:22:58
   */
-import { Filter } from "./IFilter"
+import { IFilter } from "./IFilter"
 
 export class ImageFactory {
   private file: File | HTMLImageElement // 原始文件
@@ -58,14 +58,14 @@ export class ImageFactory {
     }
   }
 
-  addFilter(filter: Filter) {
+  addFilter(filter: IFilter) {
     if (!this.image) {
       throw new Error('请先添加并解析图片')
     }
     this.context.drawImage(this.image, 0, 0)
     this.imageData = this.context.getImageData(0, 0, this.width, this.height)
     this.context.clearRect(0, 0, this.width, this.height)
-    filter.exec(this.imageData)
+    this.imageData = filter.exec(this.imageData)
     return this
   }
 

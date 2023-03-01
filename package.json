@@ -20,11 +20,14 @@
     "url": "https://github.com/Fengjing95/image-factory"
   },
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "release": "release-it"
   },
   "license": "ISC",
   "devDependencies": {
+    "@release-it/conventional-changelog": "^5.1.1",
     "@rollup/plugin-typescript": "^11.0.0",
+    "release-it": "^15.6.1",
     "rollup": "^3.17.3",
     "rollup-plugin-dts": "^5.2.0",
     "tslib": "^2.5.0"
