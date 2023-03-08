@@ -4,13 +4,15 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "浏览器中的图片处理器, 内置滤镜, 支持自定义滤镜.",
   "keywords": [
     "image",
     "filter"
   ],
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "browser": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "author": "feng <1984779164@qq.com> (https://easyremember.cn)",

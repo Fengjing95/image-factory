@@ -1,5 +1,7 @@
 
 
+## [1.2.1](https://github.com/Fengjing95/image-factory/compare/1.2.0...1.2.1) (2023-03-08)
+
 # 1.2.0 (2023-03-01)
 
 
