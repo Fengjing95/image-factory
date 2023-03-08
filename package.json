@@ -10,6 +10,7 @@
     "image",
     "filter"
   ],
+  "files": ["dist"],
   "browser": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "author": "feng <1984779164@qq.com> (https://easyremember.cn)",
@@ -23,7 +24,7 @@
     "build": "rollup -c",
     "release": "release-it"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@release-it/conventional-changelog": "^5.1.1",
     "@rollup/plugin-typescript": "^11.0.0",

@@ -9,6 +9,15 @@ $ npm install @feng-j/image-factory
 ```
 或者使用你习惯的其他包管理工具
 
+你也可以直接在 HTML 中引入
+```HTML
+<script src="https://cdn.jsdelivr.net/npm/@feng-j/image-factory/dist/index.umd.min.js"></script>
+
+```
+通过 window.ImageFactory 来获取所有的构造函数.
+
+再或者你想使用其他的模块化方案,只需要把 CDN 中的 umd 替换成目标方案即可, 现有四种规范的模块化产物可用(CommonJS, ESM, AMD, UMD, 分别对应 cjs, esm, amd, umd)
+
 ### 使用
 
 1. 首先引入构造函数 ImageFactory, 可以在实例化时传入原始文件或者稍后使用 setImage 方法设置文件(支持 File 和 HTMLImageElement两种类型);
@@ -45,9 +54,35 @@ window.onload = () => {
 目前内置了下列滤镜, 后续会继续完善内置滤镜的种类
 + GrayscaleFilter: 灰度滤镜;
 + InverseColorFilter: 反色滤镜;
-+ BrightnessFilter: 亮度调节(大于 0 变亮, 小于 0 变暗), 范围-255 到 255(纯黑和纯白);
++ BrightnessFilter: 亮度调节(大于 0 变亮, 小于 0 变暗), 范围-255 到 255(纯黑和纯白),参数直接传入滤镜构造函数;
 + OldPhotoFilter: 老照片滤镜;
 + EmbossFilter: 浮雕滤镜;
 
 
-支持自定义滤镜处理方式, 需要自定义滤镜需要实现 IFilter 接口, 在给图片添加滤镜时会将 [ImageData](https://developer.mozilla.org/zh-CN/docs/Web/API/ImageData) 数据作为参数传给 exec 方法, 你可以直接操作这个 ImageData 并返回, 也可以返回一个新的 ImageData 对象.
+支持自定义滤镜处理方式, 需要自定义滤镜需要实现 IFilter 接口
+```typescript
+interface IFilter {
+  exec(imageData: ImageData): ImageData;
+}
+```
+
+在给图片添加滤镜时会将 [ImageData](https://developer.mozilla.org/zh-CN/docs/Web/API/ImageData) 数据作为参数传给 exec 方法, 你可以直接操作这个 ImageData 并返回, 也可以返回一个新的 ImageData 对象.
+
+例如自定义一个CustomFilter 需要像下面这样
+```typescript
+class CustomFilter implements IFilter {
+  exec(imageData) {
+    const data = imageData.data
+
+    // 没四位是一个像素点, 分别是 R G B A(透明度)
+    for (let i = 0; i < data.length; i += 4) {
+      data[i] = 255
+      data[i + 1] = 0
+      data[i + 2] = 0
+    }
+
+    return imageData
+  }
+}
+```
+上面这个滤镜会将图片转为纯红色
